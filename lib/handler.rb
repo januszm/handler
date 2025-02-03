@@ -53,7 +53,7 @@ module Handler
   # <tt>ActiveSupport::Inflector.transliterate</tt>.
   #
   def self.transliterate_with_normalization(string)
-    string.mb_chars.normalize.gsub(/[^\x00-\x7F]+/, '').to_s
+    string.mb_chars.unicode_normalize.gsub(/[^\x00-\x7F]+/, '').to_s
   end
 
   ##
